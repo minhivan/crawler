@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+  <style type="text/css">
+    body {
+      overflow-x: scroll;
+    }
+    body * {
+      margin: 5px;
+    }
+    .msgBox {
+      overflow: auto;
+      display: none;
+      position: fixed;
+      min-width: 600px;
+      top: 100px;
+      right: 100px;
+      border: 2px solid aliceblue;
+      z-index: 10000;
+      padding: 0 10px 0 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 5px 10px lightblue;
+    }
+    .hide {
+      display: none;
+    }
+    input[name="result"]{
+      width: 500px;
+    }
+    #bodyCtn > form, #combineSelector {
+      border: solid 2px;
+      max-width: 600px;
+    }
+    td[name="lstSelectors"] > div {
+      border: solid 1px;
+      padding: 5px;
+      display: flex;
+      width: 550px;
+    }
+    td[name="lstSelectors"] > div > p{
+      overflow-wrap: break-word;
+      width: 500px;
+    }
+
+    i.fa {
+      cursor: pointer;
+      font-size: 14px;
+    }
+    i.fa-eye {
+      color: red
+    }
+    .execBtn{
+      background: #008fcc;
+      color: white !important;
+      padding: 10px;
+    	margin: 0 10px 0 10px;
+      border-radius: 3px;
+      border: 0;
+      font-weight:bold;
+      font-size: 16px;
+    }
+    .cancelBtn{
+      background: red;
+      color: white !important;
+      padding: 10px;
+      border-radius: 3px;
+      border: 0;
+      font-weight:bold;
+      font-size: 16px;
+    }
+    .choiceBtn{
+      background: #ad6a05;
+      color: white !important;
+      padding: 8px;
+    	margin: 5px 10px 5px 10px;
+      border-radius: 3px;
+      border: 0;
+      font-size: 14px;
+    }
+    .configBtn{
+      background: #b79800;
+      color: white !important;
+      padding: 10px;
+      border-radius: 3px;
+      border: 0;
+      font-weight:bold;
+      font-size: 14px;
+      display: inline;
+      margin: 2px;
+    }
+    .greenBtn {
+      background: #4CAF50;
+      color: white !important;
+      padding: 8px;
+      margin: 10px;
+      border-radius: 4px;
+      border: 0;
+    }
+
+    .greenBoldBtn {
+    	font-weight: bold;
+      background: #4CAF50;
+      color: white !important;
+      padding: 8px;
+      margin: 10px;
+      border-radius: 4px;
+      border: 0;
+    }
+    .childBtn {
+    	min-width: 40px;
+    	border-radius: 3px;
+      border: 0;
+    	margin: 10px 20px 10px 20px;
+    	padding: 8px;
+    	font-size: 12px;
+    	background-color: #4c4c4c;
+    	color: white
+    }
+
+    .greenBtn {
+      background: #4CAF50;
+      color: white !important;
+      padding: 8px;
+      margin: 10px;
+      border-radius: 4px;
+      border: 0;
+    }
+
+    .greenBoldBtn {
+    	font-weight: bold;
+      background: #4CAF50;
+      color: white !important;
+      padding: 8px;
+      margin: 10px;
+      border-radius: 4px;
+      border: 0;
+    }
+
+    .childBtn {
+    	min-width: 40px;
+    	border-radius: 3px;
+      border: 0;
+    	margin: 10px 20px 10px 20px;
+    	padding: 8px;
+    	font-size: 12px;
+    	background-color: #4c4c4c;
+    	color: white
+    }
+  </style>
+	<script src="jquery.js"></script>
+</head>
+<body>
+  <div id="bodyCtn"></div>
+  <div class="msgBox" name="combineSelector">
+    <form id="combineSelector">
+      <h2>
+        <label>Xem trước KQ gom Selector</label>
+        <span name="parentID"></span>
+      </h2>
+      <table>
+        <tbody>
+          <tr>
+            <td name="lstSelectors">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" class="greenBtn" id="applyCombineSelector">Áp dụng</button>
+              <button type="button" class="childBtn" id="cancelCombineSelector">Hủy bỏ</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <form id="addSelectorCtn" class="msgBox">
+    <h2 name="header">
+      <label></label>
+      <span name="parentID"></span>
+    </h2>
+    <h4 name="noti"></h4>
+    <table>
+      <tr>
+        <td>
+          ID
+        </td>
+        <td>
+          <input name="id">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Type
+        </td>
+        <td>
+          <select name="type">
+            <option value="a">a Tag (Link / href)</option>
+            <option value="button">Button</option>
+            <option value="li">li Tag</option>
+            <option value="text">Text</option>
+            <option value="html">html</option>
+          </select>
+          <label><input type="checkbox" name="isPagination"> Is Pagination</label>
+          <label><input type="checkbox" name="multiple"> Multiple Select</label>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Selector type
+        </td>
+        <td>
+          <select name="selectorType">
+            <option value="xpath">Xpath</option>
+            <option value="cssSelector">Css Selector</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Action
+        </td>
+        <td>
+          <select name="actionReq">
+            <option value="click">Click</option>
+            <option value="getText">Get Text</option>
+            <option value="getHtml">Get html</option>
+          </select>
+          <input type="checkbox" name="isScroll"> Scroll to end to get all matched Selectors
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Result
+        </td>
+        <td>
+          <input type="text" name="result">
+        </td>
+      </tr>
+    </table>
+
+    <div>
+      <button type="button" id="saveAddSelectorBtn">Lưu </button>
+      <button type="button" id="cancelAddSelectorBtn">Hủy bỏ</button>
+    </div>
+    <h2 id="notiAddSelector" style="color:red;"></h2>
+  </form>
+
+  <br><br>
+  <div>
+    <button type="button" class="greenBoldBtn" id="addChildrenTree">Thêm Children Tree</button>
+    <button type="button" class="greenBoldBtn" id="delChildrenTree" style="margin:20px">Xóa Children Tree</button>
+
+    <br><button type="button" class="choiceBtn" id="expConfig">Lưu cấu hình hiện tại ra file</button>
+    <button type="button" class="choiceBtn" id="impConfig" style="margin:20px">Nhập cấu hình từ file</button>
+    <label name="inputfile" class="hide">
+      <input type="file" name="inputfile">
+      <button type="button" class="childBtn" id="inputfile">Nhập file</button>
+    </label>
+
+    <br><br><br>
+    <button type="button" class="execBtn" id="execCrawler">Crawl dữ liệu ngay</button>
+
+  </div>
+
+  <h2 id="noti"></h2>
+
+  <div id="test"></div>
+  <div id="test1"></div>
+  <div id="test2"></div>
+  <div id="test3"></div>
+  <div id="test4"></div>
+  <br><br>
+	<script src="devtools_panel.js"></script>
+</body>
+</html>

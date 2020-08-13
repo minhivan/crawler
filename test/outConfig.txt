@@ -1,0 +1,115 @@
+
+      <form id="parenttree" style="margin-left:0px" pageurl="https://phongvu.vn/laptop-va-linh-kien-macbook-715.cat?pv_medium=m-laptop-va-linh-kien-macbook">
+        <table>
+          <tbody><tr>
+            <td>
+              <h1>Parent Tree</h1>
+            </td>
+          </tr>
+          <tr>
+            <td name="lstSelectors">
+            <div>
+            <p>[{"name":"id","value":""},{"name":"type","value":"a"},{"name":"multiple","value":"on"},{"name":"selectorType","value":"cssSelector"},{"name":"actionReq","value":"click"},{"name":"result","value":"div.product-card__info"}]</p>
+            <label>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </label>
+          </div><div>
+            <p>[{"name":"id","value":""},{"name":"type","value":"button"},{"name":"isPagination","value":"on"},{"name":"selectorType","value":"xpath"},{"name":"actionReq","value":"click"},{"name":"result","value":"//*[@id='__next']/div[5]/div[4]/nav/ul/li[11]/button"}]</p>
+            <label>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </label>
+          </div></td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" name="addSelectorBtn" style="">Thêm Selectors</button>
+              <button type="button" name="combineSelector">Gom Selectors</button>
+            </td>
+          </tr>
+        </tbody></table>
+      </form>
+    
+      <form id="childrentree1" style="margin-left:20px">
+        <table>
+          <tbody><tr>
+            <td>
+              <h1>Children Tree 1</h1>
+            </td>
+          </tr>
+          <tr>
+            <td name="lstSelectors">
+            <div>
+            <p>[{"name":"id","value":""},{"name":"type","value":"button"},{"name":"selectorType","value":"xpath"},{"name":"actionReq","value":"click"},{"name":"result","value":"//*[@id='__next']/div[5]/div[1]/div[4]/div[2]/div/button"}]</p>
+            <label>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </label>
+          </div><div>
+            <p>[{"name":"id","value":""},{"name":"type","value":"button"},{"name":"selectorType","value":"xpath"},{"name":"actionReq","value":"click"},{"name":"result","value":"//*[@id='__next']/div[5]/div[1]/div[4]/div[1]/div/div[2]/button"}]</p>
+            <label>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </label>
+          </div></td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" name="addSelectorBtn" style="">Thêm Selectors</button>
+              <button type="button" name="combineSelector">Gom Selectors</button>
+            </td>
+          </tr>
+        </tbody></table>
+      </form>
+    
+      <form id="childrentree2" style="margin-left:40px">
+        <table>
+          <tbody><tr>
+            <td>
+              <h1>Children Tree 2</h1>
+            </td>
+          </tr>
+          <tr>
+            <td name="lstSelectors">
+            <div>
+            <p>[{"name":"id","value":""},{"name":"type","value":"html"},{"name":"selectorType","value":"xpath"},{"name":"actionReq","value":"getHtml"},{"name":"result","value":"/html/body/div[2]/div[2]/div[2]"}]</p>
+            <label>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </label>
+          </div><div>
+            <p>[{"name":"id","value":""},{"name":"type","value":"html"},{"name":"selectorType","value":"xpath"},{"name":"actionReq","value":"getHtml"},{"name":"result","value":"//*[@id='__next']/div[5]/div[1]/div[4]/div[1]/div/div[2]/div/div/div"}]</p>
+            <label>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <br>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </label>
+          </div></td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" name="addSelectorBtn" style="">Thêm Selectors</button>
+              <button type="button" name="combineSelector">Gom Selectors</button>
+            </td>
+          </tr>
+        </tbody></table>
+      </form>
+    
